@@ -15,51 +15,51 @@ class ToneOptionPage extends StatelessWidget {
     return Consumer<ToneProject>(
       builder: (context, project, child) {
         final name = project.name;
+        final count = 40;
         final bpm = project.bpm;
+        final key = "C大调";
         return Scaffold(
-          appBar: AppBar(
-            title: Text(
-              AppLocalizations.of(context)!.toneOptionPage_Title(name),
-            ),
-          ),
+          appBar: AppBar(title: Text(AppLocalizations.of(context)!.option_title(name))),
           body: Column(
             mainAxisSize: .max,
             crossAxisAlignment: .start,
             spacing: 16,
             children: [
               ToneOptionMenu(
-                title: AppLocalizations.of(
-                  context,
-                )!.toneOptionPage_GeneralOptions,
+                title: AppLocalizations.of(context)!.option_general_title,
                 tiles: [
                   ListTile(
                     onTap: () => showToneOptionDialogRename(context),
                     leading: Icon(Icons.drive_file_rename_outline),
-                    title: Text("乐谱标题"),
-                    subtitle: Text("修改标题 “$name”"),
+                    title: Text(AppLocalizations.of(context)!.option_name_title),
+                    subtitle: Text(AppLocalizations.of(context)!.option_name_subtitle(name)),
+                  ),
+                  ListTile(
+                    onTap: () {},
+                    leading: Icon(Icons.grid_4x4),
+                    title: Text(AppLocalizations.of(context)!.option_count_title),
+                    subtitle: Text(AppLocalizations.of(context)!.option_count_subtitle(count)),
                   ),
                 ],
               ),
               ToneOptionMenu(
-                title: AppLocalizations.of(
-                  context,
-                )!.toneOptionPage_TheoryOptions,
+                title: AppLocalizations.of(context)!.option_theory_title,
                 tiles: [
                   ListTile(
                     onTap: () => showToneOptionDialogSetBPM(context),
                     leading: Icon(Icons.speed),
-                    title: Text("乐谱 BPM"),
-                    subtitle: Text("当前为 $bpm"),
+                    title: Text(AppLocalizations.of(context)!.option_bpm_title),
+                    subtitle: Text(AppLocalizations.of(context)!.option_bpm_subtitle(bpm)),
                   ),
                   ListTile(
                     onTap: () {},
                     leading: Icon(Icons.music_note),
-                    title: Text("乐谱拍号"),
-                    subtitle: Text("测试"),
+                    title: Text(AppLocalizations.of(context)!.option_key_title),
+                    subtitle: Text(AppLocalizations.of(context)!.option_key_subtitle(key)),
                   ),
                 ],
               ),
-              const ToneOptionHint(),
+              ToneOptionHint(hint: AppLocalizations.of(context)!.option_hint),
             ],
           ),
         );

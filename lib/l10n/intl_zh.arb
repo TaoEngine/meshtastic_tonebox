@@ -1,8 +1,8 @@
 {
   "@@author": "TaoEngine",
   "@@locale": "zh",
-  "toneOptionPage_Title": "{name} 选项",
-  "@toneOptionPage_Title": {
+  "option_title": "{name} 选项",
+  "@option_title": {
     "placeholders": {
       "name": {
         "type": "String",
@@ -11,8 +11,58 @@
       }
     }
   },
-  "toneOptionPage_GeneralOptions": "一般选项",
-  "@toneOptionPage_GeneralOptions": {},
-  "toneOptionPage_TheoryOptions": "乐理选项",
-  "@toneOptionPage_TheoryOptions": {}
+  "option_general_title": "一般选项",
+  "@option_general_title": {},
+  "option_name_title": "乐谱标题",
+  "@option_name_title": {},
+  "option_name_subtitle": "修改标题 “{name}”",
+  "@option_name_subtitle": {
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "description": "乐谱项目的名称",
+        "example": "未命名乐谱"
+      }
+    }
+  },
+  "option_count_title": "乐谱行数",
+  "@option_count_title": {},
+  "option_count_subtitle": "可编辑 {count} 行",
+  "@option_count_subtitle": {
+    "placeholders": {
+      "count":{
+        "type": "int",
+        "description": "乐谱可编辑的行个数",
+        "example": "40"
+      }
+    }
+  },
+  "option_theory_title": "乐理选项",
+  "@option_theory_title": {},
+  "option_bpm_title": "乐谱 BPM",
+  "@option_bpm_title": {},
+  "option_bpm_subtitle": "当前为 {bpm}",
+  "@option_bpm_subtitle": {
+    "placeholders": {
+      "bpm": {
+        "type": "int",
+        "description": "乐谱项目的 BPM",
+        "example": "120"
+      }
+    }
+  },
+  "option_key_title": "乐谱调号",
+  "@option_key_title": {},
+  "option_key_subtitle": "当前为 {key}",
+  "@option_key_subtitle": {
+    "placeholders": {
+      "key": {
+        "type": "String",
+        "description": "乐谱项目的调号",
+        "example": "C大调"
+      }
+    }
+  },
+  "option_hint": "短按将直接打开设置弹窗，长按可查看选项的相关介绍和注意事项。其中乐谱BPM与拍号将直接影响直出的音乐效果",
+  "@option_hint": {}
 }

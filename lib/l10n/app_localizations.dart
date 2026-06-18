@@ -62,8 +62,7 @@ import 'app_localizations_zh.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -71,8 +70,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -93,32 +91,82 @@ abstract class AppLocalizations {
       ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[
-    Locale('en'),
-    Locale('zh'),
-  ];
+  static const List<Locale> supportedLocales = <Locale>[Locale('en'), Locale('zh')];
 
-  /// No description provided for @toneOptionPage_Title.
+  /// No description provided for @option_title.
   ///
   /// In zh, this message translates to:
   /// **'{name} 选项'**
-  String toneOptionPage_Title(String name);
+  String option_title(String name);
 
-  /// No description provided for @toneOptionPage_GeneralOptions.
+  /// No description provided for @option_general_title.
   ///
   /// In zh, this message translates to:
   /// **'一般选项'**
-  String get toneOptionPage_GeneralOptions;
+  String get option_general_title;
 
-  /// No description provided for @toneOptionPage_TheoryOptions.
+  /// No description provided for @option_name_title.
+  ///
+  /// In zh, this message translates to:
+  /// **'乐谱标题'**
+  String get option_name_title;
+
+  /// No description provided for @option_name_subtitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'修改标题 “{name}”'**
+  String option_name_subtitle(String name);
+
+  /// No description provided for @option_count_title.
+  ///
+  /// In zh, this message translates to:
+  /// **'乐谱行数'**
+  String get option_count_title;
+
+  /// No description provided for @option_count_subtitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'可编辑 {count} 行'**
+  String option_count_subtitle(int count);
+
+  /// No description provided for @option_theory_title.
   ///
   /// In zh, this message translates to:
   /// **'乐理选项'**
-  String get toneOptionPage_TheoryOptions;
+  String get option_theory_title;
+
+  /// No description provided for @option_bpm_title.
+  ///
+  /// In zh, this message translates to:
+  /// **'乐谱 BPM'**
+  String get option_bpm_title;
+
+  /// No description provided for @option_bpm_subtitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'当前为 {bpm}'**
+  String option_bpm_subtitle(int bpm);
+
+  /// No description provided for @option_key_title.
+  ///
+  /// In zh, this message translates to:
+  /// **'乐谱调号'**
+  String get option_key_title;
+
+  /// No description provided for @option_key_subtitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'当前为 {key}'**
+  String option_key_subtitle(String key);
+
+  /// No description provided for @option_hint.
+  ///
+  /// In zh, this message translates to:
+  /// **'短按将直接打开设置弹窗，长按可查看选项的相关介绍和注意事项。其中乐谱BPM与拍号将直接影响直出的音乐效果'**
+  String get option_hint;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -127,8 +175,7 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'zh'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;

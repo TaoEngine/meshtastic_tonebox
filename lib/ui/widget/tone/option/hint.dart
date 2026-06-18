@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ToneOptionHint extends StatelessWidget {
+  final String hint;
+
   /// 乐谱选项的提示文字
-  const ToneOptionHint({super.key});
+  const ToneOptionHint({super.key, required this.hint});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class ToneOptionHint extends StatelessWidget {
             color: Theme.of(context).colorScheme.onSurface,
           ),
           Text(
-            "短按将直接打开设置弹窗，长按可查看选项的相关介绍和注意事项。其中乐谱BPM与拍号将直接影响直出的音乐效果",
+            "",
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ],
