@@ -1,0 +1,18 @@
+{
+  "@@author": "TaoEngine",
+  "@@locale": "zh",
+  "toneOptionPage_Title": "{name} 选项",
+  "@toneOptionPage_Title": {
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "description": "乐谱项目的名称",
+        "example": "未命名乐谱"
+      }
+    }
+  },
+  "toneOptionPage_GeneralOptions": "一般选项",
+  "@toneOptionPage_GeneralOptions": {},
+  "toneOptionPage_TheoryOptions": "乐理选项",
+  "@toneOptionPage_TheoryOptions": {}
+}
