@@ -15,14 +15,8 @@ class ToneOptionHint extends StatelessWidget {
         crossAxisAlignment: .start,
         spacing: 16,
         children: [
-          Icon(
-            Icons.info_outline,
-            color: Theme.of(context).colorScheme.onSurface,
-          ),
-          Text(
-            "",
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
+          Icon(Icons.info_outline, color: Theme.of(context).colorScheme.onSurface),
+          Text(hint, style: Theme.of(context).textTheme.bodyMedium),
         ],
       ),
     );
