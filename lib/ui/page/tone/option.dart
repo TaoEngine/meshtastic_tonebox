@@ -3,6 +3,7 @@ import 'package:meshtastic/l10n/app_localizations.dart';
 import 'package:meshtastic/provider/tone_project.dart';
 import 'package:meshtastic/ui/widget/tone/option/dialog/rename.dart';
 import 'package:meshtastic/ui/widget/tone/option/dialog/set/bpm.dart';
+import 'package:meshtastic/ui/widget/tone/option/dialog/set/count.dart';
 import 'package:meshtastic/ui/widget/tone/option/hint.dart';
 import 'package:meshtastic/ui/widget/tone/option/menu.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +16,7 @@ class ToneOptionPage extends StatelessWidget {
     return Consumer<ToneProject>(
       builder: (context, project, child) {
         final name = project.name;
-        final count = 40;
+        final lines = 40;
         final bpm = project.bpm;
         final key = "C大调";
         return Scaffold(
@@ -35,10 +36,10 @@ class ToneOptionPage extends StatelessWidget {
                     subtitle: Text(AppLocalizations.of(context)!.option_name_subtitle(name)),
                   ),
                   ListTile(
-                    onTap: () {},
+                    onTap: () => showToneOptionDialogSetCount(context),
                     leading: Icon(Icons.grid_4x4),
                     title: Text(AppLocalizations.of(context)!.option_count_title),
-                    subtitle: Text(AppLocalizations.of(context)!.option_count_subtitle(count)),
+                    subtitle: Text(AppLocalizations.of(context)!.option_count_subtitle(lines)),
                   ),
                 ],
               ),
