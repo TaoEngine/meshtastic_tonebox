@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:meshtastic/l10n/app_localizations.dart';
 import 'package:meshtastic/provider/tone_project.dart';
 import 'package:provider/provider.dart';
 
@@ -20,13 +21,16 @@ class _ToneOptionDialogSetBpmState extends State<ToneOptionDialogSetBpm> {
 
         return AlertDialog.adaptive(
           icon: Icon(Icons.speed),
-          title: Text("修改乐谱 BPM"),
+          title: Text(AppLocalizations.of(context)!.option_dialog_setbpm_title),
           content: Column(
             mainAxisSize: .min,
             crossAxisAlignment: .start,
             spacing: 16,
             children: [
-              Text("将调整 BPM 值为 $bpm", textAlign: .left),
+              Text(
+                AppLocalizations.of(context)!.option_dialog_setbpm_subtitle(bpm),
+                textAlign: .left,
+              ),
               Divider(height: 0),
               SizedBox(
                 height: 40,
@@ -66,7 +70,7 @@ class _ToneOptionDialogSetBpmState extends State<ToneOptionDialogSetBpm> {
               onPressed: () {
                 context.pop();
               },
-              child: Text("完成"),
+              child: Text(AppLocalizations.of(context)!.conform),
             ),
           ],
         );

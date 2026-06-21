@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:meshtastic/enum/octave.dart';
+import 'package:meshtastic/l10n/app_localizations.dart';
 import 'package:meshtastic/provider/tone_project.dart';
 import 'package:provider/provider.dart';
 
 class ToneOptionDialogSetKey extends StatefulWidget {
-  /// 乐谱
+  /// 乐谱项目调整调性弹窗
   const ToneOptionDialogSetKey({super.key});
 
   @override
@@ -21,13 +22,18 @@ class _ToneOptionDialogSetKeyState extends State<ToneOptionDialogSetKey> {
 
         return AlertDialog.adaptive(
           icon: Icon(Icons.music_note),
-          title: Text("修改乐谱调号"),
+          title: Text(AppLocalizations.of(context)!.option_dialog_setkey_title),
           content: Column(
             mainAxisSize: .min,
             crossAxisAlignment: .center,
             spacing: 16,
             children: [
-              Text("此处的操作相当于将乐谱的C大调映射为${translateOctave(context, key)}", textAlign: .left),
+              Text(
+                AppLocalizations.of(
+                  context,
+                )!.option_dialog_setkey_subtitle(translateOctave(context, key)),
+                textAlign: .left,
+              ),
               Divider(height: 0),
               DropdownMenu<Octave>(
                 initialSelection: key,
@@ -50,7 +56,7 @@ class _ToneOptionDialogSetKeyState extends State<ToneOptionDialogSetKey> {
               onPressed: () {
                 context.pop();
               },
-              child: Text("完成"),
+              child: Text(AppLocalizations.of(context)!.conform),
             ),
           ],
         );
@@ -59,5 +65,6 @@ class _ToneOptionDialogSetKeyState extends State<ToneOptionDialogSetKey> {
   }
 }
 
+/// 打开乐谱项目调整调性弹窗
 void showToneOptionDialogSetKey(BuildContext context) =>
     showDialog(context: context, builder: (context) => ToneOptionDialogSetKey());

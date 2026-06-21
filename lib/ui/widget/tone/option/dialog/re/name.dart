@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:meshtastic/l10n/app_localizations.dart';
 import 'package:meshtastic/provider/tone_project.dart';
 import 'package:provider/provider.dart';
 
@@ -24,7 +25,7 @@ class _ToneOptionDialogRenameState extends State<ToneOptionDialogRename> {
           key: _form,
           child: AlertDialog.adaptive(
             icon: const Icon(Icons.drive_file_rename_outline),
-            title: Text("修改乐谱标题"),
+            title: Text(AppLocalizations.of(context)!.option_dialog_rename_title),
             content: Column(
               mainAxisSize: .min,
               crossAxisAlignment: .start,
@@ -36,13 +37,13 @@ class _ToneOptionDialogRenameState extends State<ToneOptionDialogRename> {
                     border: OutlineInputBorder(),
                     filled: true,
                     hintText: name,
-                    labelText: "乐谱标题"
+                    labelText: AppLocalizations.of(context)!.option_dialog_rename_label,
                   ),
                   autofocus: true,
                   enableIMEPersonalizedLearning: false,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "乐谱标题不能为空哦";
+                      return AppLocalizations.of(context)!.option_dialog_rename_validator;
                     }
                     return null;
                   },
@@ -59,7 +60,7 @@ class _ToneOptionDialogRenameState extends State<ToneOptionDialogRename> {
                     context.pop();
                   }
                 },
-                child: Text("完成"),
+                child: Text(AppLocalizations.of(context)!.conform),
               ),
             ],
           ),

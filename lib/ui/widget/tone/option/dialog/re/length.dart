@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
+import 'package:meshtastic/l10n/app_localizations.dart';
 import 'package:meshtastic/provider/tone_project.dart';
 import 'package:provider/provider.dart';
 
@@ -25,13 +26,16 @@ class _ToneOptionDialogRelengthState extends State<ToneOptionDialogRelength> {
           key: _form,
           child: AlertDialog.adaptive(
             icon: const Icon(Icons.grid_4x4),
-            title: Text("修改乐谱长度"),
+            title: Text(AppLocalizations.of(context)!.option_dialog_relength_title),
             content: Column(
               mainAxisSize: .min,
               crossAxisAlignment: .start,
               spacing: 16,
               children: [
-                Text("Meshtastic 设备可支持最长40行的乐谱。少于20行的，设备会播放两次", textAlign: .left),
+                Text(
+                  AppLocalizations.of(context)!.option_dialog_relength_subtitle,
+                  textAlign: .left,
+                ),
                 Divider(height: 0),
                 Row(
                   mainAxisSize: .max,
@@ -44,7 +48,7 @@ class _ToneOptionDialogRelengthState extends State<ToneOptionDialogRelength> {
                           border: OutlineInputBorder(),
                           filled: true,
                           hintText: length.toString(),
-                          labelText: "乐谱长度",
+                          labelText: AppLocalizations.of(context)!.option_dialog_relength_label,
                         ),
                         autofocus: true,
                         keyboardType: .number,
@@ -52,10 +56,14 @@ class _ToneOptionDialogRelengthState extends State<ToneOptionDialogRelength> {
                         enableIMEPersonalizedLearning: false,
                         validator: (value) {
                           if (value == null || value.isEmpty || int.parse(value) < 1) {
-                            return "乐谱长度不能为空哦";
+                            return AppLocalizations.of(
+                              context,
+                            )!.option_dialog_relength_validator_empty;
                           }
                           if (int.parse(value) > 40) {
-                            return "对于设备来说这乐谱可太长了";
+                            return AppLocalizations.of(
+                              context,
+                            )!.option_dialog_relength_validator_long;
                           }
                           return null;
                         },
@@ -78,7 +86,7 @@ class _ToneOptionDialogRelengthState extends State<ToneOptionDialogRelength> {
                     context.pop();
                   }
                 },
-                child: Text("完成"),
+                child: Text(AppLocalizations.of(context)!.conform),
               ),
             ],
           ),

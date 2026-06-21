@@ -92,6 +92,12 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('zh')];
 
+  /// No description provided for @conform.
+  ///
+  /// In zh, this message translates to:
+  /// **'确定'**
+  String get conform;
+
   /// No description provided for @octave_c.
   ///
   /// In zh, this message translates to:
@@ -235,6 +241,78 @@ abstract class AppLocalizations {
   /// In zh, this message translates to:
   /// **'短按将直接打开设置弹窗，长按可查看选项的相关介绍和注意事项。其中乐谱BPM与拍号将直接影响直出的音乐效果'**
   String get option_hint;
+
+  /// No description provided for @option_dialog_rename_title.
+  ///
+  /// In zh, this message translates to:
+  /// **'修改乐谱标题'**
+  String get option_dialog_rename_title;
+
+  /// No description provided for @option_dialog_rename_label.
+  ///
+  /// In zh, this message translates to:
+  /// **'乐谱标题'**
+  String get option_dialog_rename_label;
+
+  /// No description provided for @option_dialog_rename_validator.
+  ///
+  /// In zh, this message translates to:
+  /// **'乐谱标题不能为空哦'**
+  String get option_dialog_rename_validator;
+
+  /// No description provided for @option_dialog_relength_title.
+  ///
+  /// In zh, this message translates to:
+  /// **'修改乐谱长度'**
+  String get option_dialog_relength_title;
+
+  /// No description provided for @option_dialog_relength_subtitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'Meshtastic 设备可支持最长40行的乐谱。少于20行的，设备会播放两次'**
+  String get option_dialog_relength_subtitle;
+
+  /// No description provided for @option_dialog_relength_label.
+  ///
+  /// In zh, this message translates to:
+  /// **'乐谱长度'**
+  String get option_dialog_relength_label;
+
+  /// No description provided for @option_dialog_relength_validator_empty.
+  ///
+  /// In zh, this message translates to:
+  /// **'乐谱长度不能为空哦'**
+  String get option_dialog_relength_validator_empty;
+
+  /// No description provided for @option_dialog_relength_validator_long.
+  ///
+  /// In zh, this message translates to:
+  /// **'对于设备来说这乐谱可太长了'**
+  String get option_dialog_relength_validator_long;
+
+  /// No description provided for @option_dialog_setbpm_title.
+  ///
+  /// In zh, this message translates to:
+  /// **'修改乐谱 BPM'**
+  String get option_dialog_setbpm_title;
+
+  /// No description provided for @option_dialog_setbpm_subtitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'将调整 BPM 值为 {bpm}'**
+  String option_dialog_setbpm_subtitle(int bpm);
+
+  /// No description provided for @option_dialog_setkey_title.
+  ///
+  /// In zh, this message translates to:
+  /// **'修改乐谱调性'**
+  String get option_dialog_setkey_title;
+
+  /// No description provided for @option_dialog_setkey_subtitle.
+  ///
+  /// In zh, this message translates to:
+  /// **'此处的操作相当于将乐谱的C大调映射为{key}'**
+  String option_dialog_setkey_subtitle(String key);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

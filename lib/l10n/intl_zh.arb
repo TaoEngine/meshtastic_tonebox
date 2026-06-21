@@ -1,6 +1,8 @@
 {
   "@@author": "TaoEngine",
   "@@locale": "zh",
+  "conform": "确定",
+  "@conform": {},
   "octave_c": "C大调",
   "@octave_c": {},
   "octave_csharp": "升C调",
@@ -88,5 +90,45 @@
     }
   },
   "option_hint": "短按将直接打开设置弹窗，长按可查看选项的相关介绍和注意事项。其中乐谱BPM与拍号将直接影响直出的音乐效果",
-  "@option_hint": {}
+  "@option_hint": {},
+  "option_dialog_rename_title": "修改乐谱标题",
+  "@option_dialog_rename_title": {},
+  "option_dialog_rename_label": "乐谱标题",
+  "@option_dialog_rename_label": {},
+  "option_dialog_rename_validator": "乐谱标题不能为空哦",
+  "@option_dialog_rename_validator": {},
+  "option_dialog_relength_title": "修改乐谱长度",
+  "@option_dialog_relength_title": {},
+  "option_dialog_relength_subtitle": "Meshtastic 设备可支持最长40行的乐谱。少于20行的，设备会播放两次",
+  "@option_dialog_relength_subtitle": {},
+  "option_dialog_relength_label": "乐谱长度",
+  "@option_dialog_relength_label": {},
+  "option_dialog_relength_validator_empty": "乐谱长度不能为空哦",
+  "@option_dialog_relength_validator_empty": {},
+  "option_dialog_relength_validator_long": "对于设备来说这乐谱可太长了",
+  "@option_dialog_relength_validator_long": {},
+  "option_dialog_setbpm_title": "修改乐谱 BPM",
+  "@option_dialog_setbpm_title": {},
+  "option_dialog_setbpm_subtitle": "将调整 BPM 值为 {bpm}",
+  "@option_dialog_setbpm_subtitle": {
+    "placeholders": {
+      "bpm": {
+        "type": "int",
+        "description": "乐谱项目的 BPM",
+        "example": "120"
+      }
+    }
+  },
+  "option_dialog_setkey_title": "修改乐谱调性",
+  "@option_dialog_setkey_title": {},
+  "option_dialog_setkey_subtitle": "此处的操作相当于将乐谱的C大调映射为{key}",
+  "@option_dialog_setkey_subtitle": {
+    "placeholders": {
+      "key": {
+        "type": "String",
+        "description": "乐谱的调性，采用易读的文本",
+        "example": "C大调"
+      }
+    }
+  }
 }
