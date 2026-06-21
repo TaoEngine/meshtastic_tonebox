@@ -12,7 +12,7 @@ class ToneOptionDialogRename extends StatefulWidget {
 }
 
 class _ToneOptionDialogRenameState extends State<ToneOptionDialogRename> {
-  String newName = "";
+  final _form = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -20,37 +20,49 @@ class _ToneOptionDialogRenameState extends State<ToneOptionDialogRename> {
       builder: (context, project, child) {
         final name = project.name;
 
-        return AlertDialog.adaptive(
-          icon: Icon(Icons.drive_file_rename_outline),
-          title: Text("修改乐谱标题"),
-          content: Column(
-            mainAxisSize: .min,
-            crossAxisAlignment: .start,
-            spacing: 16,
-            children: [
-              Text("标题不能为空", textAlign: .left),
-              Divider(height: 0),
-              TextField(
-                autofocus: true,
-                enableIMEPersonalizedLearning: false,
-                onChanged: (value) => newName = value,
-                decoration: InputDecoration(filled: true, hintText: name),
+        return Form(
+          key: _form,
+          child: AlertDialog.adaptive(
+            icon: const Icon(Icons.drive_file_rename_outline),
+            title: Text("修改乐谱标题"),
+            content: Column(
+              mainAxisSize: .min,
+              crossAxisAlignment: .start,
+              spacing: 16,
+              children: [
+                Divider(height: 0),
+                TextFormField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    filled: true,
+                    hintText: name,
+                    labelText: "乐谱标题"
+                  ),
+                  autofocus: true,
+                  enableIMEPersonalizedLearning: false,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "乐谱标题不能为空哦";
+                    }
+                    return null;
+                  },
+                  onChanged: (_) => _form.currentState!.validate(),
+                  onSaved: (newValue) => project.updateName(newValue!),
+                ),
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  if (_form.currentState!.validate()) {
+                    _form.currentState!.save();
+                    context.pop();
+                  }
+                },
+                child: Text("完成"),
               ),
             ],
           ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                if (newName.isNotEmpty) {
-                  project.updateName(newName);
-                } else {
-                  _showRenameFailure(context);
-                }
-                context.pop();
-              },
-              child: Text("完成"),
-            ),
-          ],
         );
       },
     );
@@ -58,12 +70,5 @@ class _ToneOptionDialogRenameState extends State<ToneOptionDialogRename> {
 }
 
 /// 打开乐谱项目重命名弹窗
-void showToneOptionDialogRename(BuildContext context) => showDialog(
-  context: context,
-  builder: (context) => ToneOptionDialogRename(),
-);
-
-/// 重命名为空时出现的提示
-void _showRenameFailure(BuildContext context) => ScaffoldMessenger.of(
-  context,
-).showSnackBar(SnackBar(content: Text("标题不能为空哦")));
+void showToneOptionDialogRename(BuildContext context) =>
+    showDialog(context: context, builder: (context) => ToneOptionDialogRename());
