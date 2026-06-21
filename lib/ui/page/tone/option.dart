@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meshtastic/enum/note.dart';
 import 'package:meshtastic/l10n/app_localizations.dart';
-import 'package:meshtastic/provider/tone_project.dart';
+import 'package:meshtastic/provider/tone/project.dart';
 import 'package:meshtastic/ui/widget/tone/option/dialog/re/name.dart';
 import 'package:meshtastic/ui/widget/tone/option/dialog/set/bpm.dart';
 import 'package:meshtastic/ui/widget/tone/option/dialog/re/length.dart';
@@ -10,8 +10,37 @@ import 'package:meshtastic/ui/widget/tone/option/hint.dart';
 import 'package:meshtastic/ui/widget/tone/option/menu.dart';
 import 'package:provider/provider.dart';
 
-class ToneOptionPage extends StatelessWidget {
+class ToneOptionPage extends StatefulWidget {
   const ToneOptionPage({super.key});
+
+  @override
+  State<ToneOptionPage> createState() => _ToneOptionPageState();
+}
+
+class _ToneOptionPageState extends State<ToneOptionPage> with WidgetsBindingObserver {
+  Future<void> _safeSave() async {
+    final project = context.read<ToneProject>();
+    final uuid = await project.saveProject();
+    debugPrint("保存了项目 $uuid");
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    _safeSave();
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == .paused || state == .inactive) _safeSave();
+  }
 
   @override
   Widget build(BuildContext context) {

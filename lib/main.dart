@@ -1,17 +1,18 @@
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 import 'package:meshtastic/l10n/app_localizations.dart';
-import 'package:meshtastic/provider/tone_project.dart';
+import 'package:meshtastic/model/project/data.dart';
+import 'package:meshtastic/provider/tone/project.dart';
 import 'package:meshtastic/ui/page/router.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  runApp(
-    ChangeNotifierProvider(
-      create: (context) => ToneProject(),
-      child: const MyApp(),
-    ),
-  );
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(ProjectDataAdapter());
+  Hive.registerAdapter(SheetItemDataAdapter());
+  runApp(ChangeNotifierProvider(create: (context) => ToneProject(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

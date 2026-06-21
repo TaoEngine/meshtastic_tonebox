@@ -9,7 +9,7 @@ class ToneEditor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> toneList = List.generate(
-      40,
+      0,
       (int line) => Stack(
         children: [
           ToneEditTexture(lineEdit: line),

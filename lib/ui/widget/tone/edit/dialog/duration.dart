@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meshtastic/enum/project_duration.dart';
-import 'package:meshtastic/provider/tone_project.dart';
+import 'package:meshtastic/provider/tone/project.dart';
 import 'package:meshtastic/ui/widget/tone/edit/unit/duration.dart';
 import 'package:provider/provider.dart';
 
@@ -75,7 +75,7 @@ class _ToneEditDialogDurationState extends State<ToneEditDialogDuration> {
                   divisions: 4,
                   value: changeDurationDouble(duration),
                   onChanged: (value) => setState(() {
-                    project.updateNoteDuration(
+                    project.updateSheetDuration(
                       widget.line,
                       changeDoubleDuration(value),
                     );
@@ -91,7 +91,7 @@ class _ToneEditDialogDurationState extends State<ToneEditDialogDuration> {
                       Switch(
                         value: dotted,
                         onChanged: (value) => setState(() {
-                          project.updateNoteDotted(widget.line, value);
+                          project.updateSheetDotted(widget.line, value);
                         }),
                       ),
                     ],

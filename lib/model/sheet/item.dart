@@ -2,11 +2,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:meshtastic/enum/note.dart';
 import 'package:meshtastic/enum/project_duration.dart';
 
-part 'sheet.freezed.dart';
+part 'item.freezed.dart';
 
 /// 乐谱的某一行，包含八度和节拍
 @freezed
-class ToneSheet with _$ToneSheet {
+class SheetItem with _$SheetItem {
   /// 音名
   @override
   final Note? note;
@@ -23,7 +23,7 @@ class ToneSheet with _$ToneSheet {
   @override
   final bool dotted;
 
-  const ToneSheet({
+  const SheetItem({
     required this.note,
     required this.octave,
     required this.duration,

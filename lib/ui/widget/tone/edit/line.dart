@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meshtastic/enum/project_duration.dart';
-import 'package:meshtastic/provider/tone_project.dart';
+import 'package:meshtastic/provider/tone/project.dart';
 import 'package:meshtastic/ui/widget/tone/edit/dialog/duration.dart';
 import 'package:meshtastic/ui/widget/tone/edit/unit/duration.dart';
 import 'package:provider/provider.dart';
@@ -51,7 +51,7 @@ class ToneEditLine extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {
                   final duration = project.sheet[line].duration;
-                  project.updateNoteDuration(line, carouselDuration(duration));
+                  project.updateSheetDuration(line, carouselDuration(duration));
                 },
                 onLongPress: () =>
                     showToneEditDialogDuration(context, line),

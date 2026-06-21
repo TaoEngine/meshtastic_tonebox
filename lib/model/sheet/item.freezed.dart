@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'sheet.dart';
+part of 'item.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,20 +12,24 @@ part of 'sheet.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$ToneSheet {
+mixin _$SheetItem {
 
- Note? get note; int get octave; ProjectDuration get duration; bool get dotted;
-/// Create a copy of ToneSheet
+/// 音名
+ Note? get note;/// 八度
+ int get octave;/// 节拍
+ ProjectDuration get duration;/// 附点
+ bool get dotted;
+/// Create a copy of SheetItem
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$ToneSheetCopyWith<ToneSheet> get copyWith => _$ToneSheetCopyWithImpl<ToneSheet>(this as ToneSheet, _$identity);
+$SheetItemCopyWith<SheetItem> get copyWith => _$SheetItemCopyWithImpl<SheetItem>(this as SheetItem, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ToneSheet&&(identical(other.note, note) || other.note == note)&&(identical(other.octave, octave) || other.octave == octave)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.dotted, dotted) || other.dotted == dotted));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SheetItem&&(identical(other.note, note) || other.note == note)&&(identical(other.octave, octave) || other.octave == octave)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.dotted, dotted) || other.dotted == dotted));
 }
 
 
@@ -34,15 +38,15 @@ int get hashCode => Object.hash(runtimeType,note,octave,duration,dotted);
 
 @override
 String toString() {
-  return 'ToneSheet(note: $note, octave: $octave, duration: $duration, dotted: $dotted)';
+  return 'SheetItem(note: $note, octave: $octave, duration: $duration, dotted: $dotted)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $ToneSheetCopyWith<$Res>  {
-  factory $ToneSheetCopyWith(ToneSheet value, $Res Function(ToneSheet) _then) = _$ToneSheetCopyWithImpl;
+abstract mixin class $SheetItemCopyWith<$Res>  {
+  factory $SheetItemCopyWith(SheetItem value, $Res Function(SheetItem) _then) = _$SheetItemCopyWithImpl;
 @useResult
 $Res call({
  Note? note, int octave, ProjectDuration duration, bool dotted
@@ -53,17 +57,17 @@ $Res call({
 
 }
 /// @nodoc
-class _$ToneSheetCopyWithImpl<$Res>
-    implements $ToneSheetCopyWith<$Res> {
-  _$ToneSheetCopyWithImpl(this._self, this._then);
+class _$SheetItemCopyWithImpl<$Res>
+    implements $SheetItemCopyWith<$Res> {
+  _$SheetItemCopyWithImpl(this._self, this._then);
 
-  final ToneSheet _self;
-  final $Res Function(ToneSheet) _then;
+  final SheetItem _self;
+  final $Res Function(SheetItem) _then;
 
-/// Create a copy of ToneSheet
+/// Create a copy of SheetItem
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? note = freezed,Object? octave = null,Object? duration = null,Object? dotted = null,}) {
-  return _then(ToneSheet(
+  return _then(SheetItem(
 note: freezed == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
 as Note?,octave: null == octave ? _self.octave : octave // ignore: cast_nullable_to_non_nullable
 as int,duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
@@ -75,8 +79,8 @@ as bool,
 }
 
 
-/// Adds pattern-matching-related methods to [ToneSheet].
-extension ToneSheetPatterns on ToneSheet {
+/// Adds pattern-matching-related methods to [SheetItem].
+extension SheetItemPatterns on SheetItem {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:

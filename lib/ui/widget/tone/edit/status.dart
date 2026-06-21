@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meshtastic/provider/tone_project.dart';
+import 'package:meshtastic/provider/tone/project.dart';
 import 'package:provider/provider.dart';
 
 class ToneEditStatus extends StatelessWidget {
