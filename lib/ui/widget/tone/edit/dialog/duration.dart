@@ -26,7 +26,7 @@ class _ToneEditDialogDurationState extends State<ToneEditDialogDuration> {
         padding: const .only(bottom: 16),
         child: Consumer<ToneProject>(
           builder: (context, project, _) {
-            final notes = project.notes[widget.line];
+            final notes = project.sheet[widget.line];
             duration = notes.duration;
             dotted = notes.dotted;
 

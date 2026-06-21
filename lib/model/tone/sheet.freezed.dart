@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'sheet_note.dart';
+part of 'sheet.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,40 +12,40 @@ part of 'sheet_note.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$SheetNote {
+mixin _$ToneSheet {
 
- ToneType get name; int get octave; ProjectDuration get duration; bool get dotted;
-/// Create a copy of SheetNote
+ Note? get note; int get octave; ProjectDuration get duration; bool get dotted;
+/// Create a copy of ToneSheet
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$SheetNoteCopyWith<SheetNote> get copyWith => _$SheetNoteCopyWithImpl<SheetNote>(this as SheetNote, _$identity);
+$ToneSheetCopyWith<ToneSheet> get copyWith => _$ToneSheetCopyWithImpl<ToneSheet>(this as ToneSheet, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SheetNote&&(identical(other.name, name) || other.name == name)&&(identical(other.octave, octave) || other.octave == octave)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.dotted, dotted) || other.dotted == dotted));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ToneSheet&&(identical(other.note, note) || other.note == note)&&(identical(other.octave, octave) || other.octave == octave)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.dotted, dotted) || other.dotted == dotted));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,name,octave,duration,dotted);
+int get hashCode => Object.hash(runtimeType,note,octave,duration,dotted);
 
 @override
 String toString() {
-  return 'SheetNote(name: $name, octave: $octave, duration: $duration, dotted: $dotted)';
+  return 'ToneSheet(note: $note, octave: $octave, duration: $duration, dotted: $dotted)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $SheetNoteCopyWith<$Res>  {
-  factory $SheetNoteCopyWith(SheetNote value, $Res Function(SheetNote) _then) = _$SheetNoteCopyWithImpl;
+abstract mixin class $ToneSheetCopyWith<$Res>  {
+  factory $ToneSheetCopyWith(ToneSheet value, $Res Function(ToneSheet) _then) = _$ToneSheetCopyWithImpl;
 @useResult
 $Res call({
- ToneType name, int octave, ProjectDuration duration, bool dotted
+ Note? note, int octave, ProjectDuration duration, bool dotted
 });
 
 
@@ -53,19 +53,19 @@ $Res call({
 
 }
 /// @nodoc
-class _$SheetNoteCopyWithImpl<$Res>
-    implements $SheetNoteCopyWith<$Res> {
-  _$SheetNoteCopyWithImpl(this._self, this._then);
+class _$ToneSheetCopyWithImpl<$Res>
+    implements $ToneSheetCopyWith<$Res> {
+  _$ToneSheetCopyWithImpl(this._self, this._then);
 
-  final SheetNote _self;
-  final $Res Function(SheetNote) _then;
+  final ToneSheet _self;
+  final $Res Function(ToneSheet) _then;
 
-/// Create a copy of SheetNote
+/// Create a copy of ToneSheet
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? octave = null,Object? duration = null,Object? dotted = null,}) {
-  return _then(SheetNote(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as ToneType,octave: null == octave ? _self.octave : octave // ignore: cast_nullable_to_non_nullable
+@pragma('vm:prefer-inline') @override $Res call({Object? note = freezed,Object? octave = null,Object? duration = null,Object? dotted = null,}) {
+  return _then(ToneSheet(
+note: freezed == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
+as Note?,octave: null == octave ? _self.octave : octave // ignore: cast_nullable_to_non_nullable
 as int,duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
 as ProjectDuration,dotted: null == dotted ? _self.dotted : dotted // ignore: cast_nullable_to_non_nullable
 as bool,
@@ -75,8 +75,8 @@ as bool,
 }
 
 
-/// Adds pattern-matching-related methods to [SheetNote].
-extension SheetNotePatterns on SheetNote {
+/// Adds pattern-matching-related methods to [ToneSheet].
+extension ToneSheetPatterns on ToneSheet {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:

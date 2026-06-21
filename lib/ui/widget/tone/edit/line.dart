@@ -50,7 +50,7 @@ class ToneEditLine extends StatelessWidget {
               flex: 1,
               child: GestureDetector(
                 onTap: () {
-                  final duration = project.notes[line].duration;
+                  final duration = project.sheet[line].duration;
                   project.updateNoteDuration(line, carouselDuration(duration));
                 },
                 onLongPress: () =>

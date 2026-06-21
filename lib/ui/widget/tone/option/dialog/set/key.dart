@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:meshtastic/enum/octave.dart';
+import 'package:meshtastic/enum/note.dart';
 import 'package:meshtastic/l10n/app_localizations.dart';
 import 'package:meshtastic/provider/tone_project.dart';
 import 'package:provider/provider.dart';
@@ -31,17 +31,17 @@ class _ToneOptionDialogSetKeyState extends State<ToneOptionDialogSetKey> {
               Text(
                 AppLocalizations.of(
                   context,
-                )!.option_dialog_setkey_subtitle(translateOctave(context, key)),
+                )!.option_dialog_setkey_subtitle(translateNote(context, key)),
                 textAlign: .left,
               ),
               Divider(height: 0),
-              DropdownMenu<Octave>(
+              DropdownMenu<Note>(
                 initialSelection: key,
-                dropdownMenuEntries: Octave.values
+                dropdownMenuEntries: Note.values
                     .map(
-                      (octave) => DropdownMenuEntry<Octave>(
-                        value: octave,
-                        label: "${translateOctave(context, octave)} (${octave.symbol})",
+                      (note) => DropdownMenuEntry<Note>(
+                        value: note,
+                        label: "${translateNote(context, note)} (${note.symbol})",
                       ),
                     )
                     .toList(),

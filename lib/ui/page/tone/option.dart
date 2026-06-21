@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meshtastic/enum/octave.dart';
+import 'package:meshtastic/enum/note.dart';
 import 'package:meshtastic/l10n/app_localizations.dart';
 import 'package:meshtastic/provider/tone_project.dart';
 import 'package:meshtastic/ui/widget/tone/option/dialog/re/name.dart';
@@ -61,7 +61,7 @@ class ToneOptionPage extends StatelessWidget {
                     subtitle: Text(
                       AppLocalizations.of(
                         context,
-                      )!.option_key_subtitle(translateOctave(context, key)),
+                      )!.option_key_subtitle(translateNote(context, key)),
                     ),
                   ),
                 ],

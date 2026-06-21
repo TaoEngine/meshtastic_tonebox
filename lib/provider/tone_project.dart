@@ -1,8 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:meshtastic/enum/octave.dart';
+import 'package:meshtastic/enum/note.dart';
 import 'package:meshtastic/enum/project_duration.dart';
-import 'package:meshtastic/enum/tone_type.dart';
-import 'package:meshtastic/model/sheet_note.dart';
+import 'package:meshtastic/model/tone/sheet.dart';
 
 class ToneProject extends ChangeNotifier {
   /// 乐谱名称
@@ -18,23 +17,23 @@ class ToneProject extends ChangeNotifier {
   int _bpm = 120;
 
   /// 乐谱调号
-  Octave get key => _key;
-  Octave _key = .c;
+  Note get key => _key;
+  Note _key = .c;
 
   /// 项目默认音符时长
   ProjectDuration get durationDefault => _durationDefault;
   ProjectDuration _durationDefault = .quarter;
 
   /// 项目的乐谱
-  List<SheetNote> get notes => _notes;
-  final List<SheetNote> _notes = List.filled(
+  List<ToneSheet> get sheet => _sheet;
+  final List<ToneSheet> _sheet = List.filled(
     40,
-    SheetNote(name: .P, octave: 4, duration: .quarter, dotted: false),
+    ToneSheet(note: null, octave: 4, duration: .quarter, dotted: false),
     growable: false,
   );
 
   /// 项目乐谱的音符个数
-  int get notesCount => _notes.length;
+  int get notesCount => _sheet.length;
 
   /// 更新乐谱名称
   void updateName(String value) {
@@ -55,7 +54,7 @@ class ToneProject extends ChangeNotifier {
   }
 
   /// 更新乐谱调号
-  void updateKey(Octave value) {
+  void updateKey(Note value) {
     _key = value;
     notifyListeners();
   }
@@ -67,26 +66,26 @@ class ToneProject extends ChangeNotifier {
   }
 
   /// 更新项目乐谱中某一行的音名
-  void updateNoteName(int line, ToneType value) {
-    _notes[line] = _notes[line].copyWith(name: value);
+  void updateNoteName(int line, Note? value) {
+    _sheet[line] = _sheet[line].copyWith(note: value);
     notifyListeners();
   }
 
   /// 更新项目乐谱中某一行的八度
   void updateNoteOctave(int line, int value) {
-    _notes[line] = _notes[line].copyWith(octave: value);
+    _sheet[line] = _sheet[line].copyWith(octave: value);
     notifyListeners();
   }
 
   /// 更新项目乐谱中某一行的节拍
   void updateNoteDuration(int line, ProjectDuration value) {
-    _notes[line] = _notes[line].copyWith(duration: value);
+    _sheet[line] = _sheet[line].copyWith(duration: value);
     notifyListeners();
   }
 
   /// 更新项目乐谱中某一行的附点
   void updateNoteDotted(int line, bool value) {
-    _notes[line] = _notes[line].copyWith(dotted: value);
+    _sheet[line] = _sheet[line].copyWith(dotted: value);
     notifyListeners();
   }
 }

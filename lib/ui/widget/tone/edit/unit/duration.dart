@@ -12,7 +12,7 @@ class ToneEditUnitDuration extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Consumer<ToneProject>(
     builder: (context, project, child) {
-      final note = project.notes[line];
+      final note = project.sheet[line];
       Color colorContainer = Theme.of(context).colorScheme.surfaceContainer;
       Color colorText = Theme.of(context).colorScheme.onSurface.withAlpha(50);
       if (note.duration.value != project.durationDefault.value || note.dotted) {

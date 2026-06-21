@@ -12,40 +12,40 @@ class AppLocalizationsZh extends AppLocalizations {
   String get conform => '确定';
 
   @override
-  String get octave_c => 'C大调';
+  String get note_c => 'C大调';
 
   @override
-  String get octave_csharp => '升C调';
+  String get note_csharp => '升C调';
 
   @override
-  String get octave_d => 'D大调';
+  String get note_d => 'D大调';
 
   @override
-  String get octave_dsharp => '升D调';
+  String get note_dsharp => '升D调';
 
   @override
-  String get octave_e => 'E大调';
+  String get note_e => 'E大调';
 
   @override
-  String get octave_f => 'F大调';
+  String get note_f => 'F大调';
 
   @override
-  String get octave_fsharp => '升F调';
+  String get note_fsharp => '升F调';
 
   @override
-  String get octave_g => 'G大调';
+  String get note_g => 'G大调';
 
   @override
-  String get octave_gsharp => '升G调';
+  String get note_gsharp => '升G调';
 
   @override
-  String get octave_a => 'A大调';
+  String get note_a => 'A大调';
 
   @override
-  String get octave_asharp => '升A调';
+  String get note_asharp => '升A调';
 
   @override
-  String get octave_b => 'B大调';
+  String get note_b => 'B大调';
 
   @override
   String option_title(String name) {

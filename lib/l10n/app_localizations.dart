@@ -98,77 +98,77 @@ abstract class AppLocalizations {
   /// **'确定'**
   String get conform;
 
-  /// No description provided for @octave_c.
+  /// No description provided for @note_c.
   ///
   /// In zh, this message translates to:
   /// **'C大调'**
-  String get octave_c;
+  String get note_c;
 
-  /// No description provided for @octave_csharp.
+  /// No description provided for @note_csharp.
   ///
   /// In zh, this message translates to:
   /// **'升C调'**
-  String get octave_csharp;
+  String get note_csharp;
 
-  /// No description provided for @octave_d.
+  /// No description provided for @note_d.
   ///
   /// In zh, this message translates to:
   /// **'D大调'**
-  String get octave_d;
+  String get note_d;
 
-  /// No description provided for @octave_dsharp.
+  /// No description provided for @note_dsharp.
   ///
   /// In zh, this message translates to:
   /// **'升D调'**
-  String get octave_dsharp;
+  String get note_dsharp;
 
-  /// No description provided for @octave_e.
+  /// No description provided for @note_e.
   ///
   /// In zh, this message translates to:
   /// **'E大调'**
-  String get octave_e;
+  String get note_e;
 
-  /// No description provided for @octave_f.
+  /// No description provided for @note_f.
   ///
   /// In zh, this message translates to:
   /// **'F大调'**
-  String get octave_f;
+  String get note_f;
 
-  /// No description provided for @octave_fsharp.
+  /// No description provided for @note_fsharp.
   ///
   /// In zh, this message translates to:
   /// **'升F调'**
-  String get octave_fsharp;
+  String get note_fsharp;
 
-  /// No description provided for @octave_g.
+  /// No description provided for @note_g.
   ///
   /// In zh, this message translates to:
   /// **'G大调'**
-  String get octave_g;
+  String get note_g;
 
-  /// No description provided for @octave_gsharp.
+  /// No description provided for @note_gsharp.
   ///
   /// In zh, this message translates to:
   /// **'升G调'**
-  String get octave_gsharp;
+  String get note_gsharp;
 
-  /// No description provided for @octave_a.
+  /// No description provided for @note_a.
   ///
   /// In zh, this message translates to:
   /// **'A大调'**
-  String get octave_a;
+  String get note_a;
 
-  /// No description provided for @octave_asharp.
+  /// No description provided for @note_asharp.
   ///
   /// In zh, this message translates to:
   /// **'升A调'**
-  String get octave_asharp;
+  String get note_asharp;
 
-  /// No description provided for @octave_b.
+  /// No description provided for @note_b.
   ///
   /// In zh, this message translates to:
   /// **'B大调'**
-  String get octave_b;
+  String get note_b;
 
   /// No description provided for @option_title.
   ///
