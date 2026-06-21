@@ -92,6 +92,78 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('zh')];
 
+  /// No description provided for @octave_c.
+  ///
+  /// In zh, this message translates to:
+  /// **'C大调'**
+  String get octave_c;
+
+  /// No description provided for @octave_csharp.
+  ///
+  /// In zh, this message translates to:
+  /// **'升C调'**
+  String get octave_csharp;
+
+  /// No description provided for @octave_d.
+  ///
+  /// In zh, this message translates to:
+  /// **'D大调'**
+  String get octave_d;
+
+  /// No description provided for @octave_dsharp.
+  ///
+  /// In zh, this message translates to:
+  /// **'升D调'**
+  String get octave_dsharp;
+
+  /// No description provided for @octave_e.
+  ///
+  /// In zh, this message translates to:
+  /// **'E大调'**
+  String get octave_e;
+
+  /// No description provided for @octave_f.
+  ///
+  /// In zh, this message translates to:
+  /// **'F大调'**
+  String get octave_f;
+
+  /// No description provided for @octave_fsharp.
+  ///
+  /// In zh, this message translates to:
+  /// **'升F调'**
+  String get octave_fsharp;
+
+  /// No description provided for @octave_g.
+  ///
+  /// In zh, this message translates to:
+  /// **'G大调'**
+  String get octave_g;
+
+  /// No description provided for @octave_gsharp.
+  ///
+  /// In zh, this message translates to:
+  /// **'升G调'**
+  String get octave_gsharp;
+
+  /// No description provided for @octave_a.
+  ///
+  /// In zh, this message translates to:
+  /// **'A大调'**
+  String get octave_a;
+
+  /// No description provided for @octave_asharp.
+  ///
+  /// In zh, this message translates to:
+  /// **'升A调'**
+  String get octave_asharp;
+
+  /// No description provided for @octave_b.
+  ///
+  /// In zh, this message translates to:
+  /// **'B大调'**
+  String get octave_b;
+
   /// No description provided for @option_title.
   ///
   /// In zh, this message translates to:
@@ -119,7 +191,7 @@ abstract class AppLocalizations {
   /// No description provided for @option_count_title.
   ///
   /// In zh, this message translates to:
-  /// **'乐谱行数'**
+  /// **'乐谱长度'**
   String get option_count_title;
 
   /// No description provided for @option_count_subtitle.
@@ -149,7 +221,7 @@ abstract class AppLocalizations {
   /// No description provided for @option_key_title.
   ///
   /// In zh, this message translates to:
-  /// **'乐谱调号'**
+  /// **'乐谱调性'**
   String get option_key_title;
 
   /// No description provided for @option_key_subtitle.

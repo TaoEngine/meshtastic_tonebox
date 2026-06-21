@@ -9,6 +9,42 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
+  String get octave_c => 'C大调';
+
+  @override
+  String get octave_csharp => '升C调';
+
+  @override
+  String get octave_d => 'D大调';
+
+  @override
+  String get octave_dsharp => '升D调';
+
+  @override
+  String get octave_e => 'E大调';
+
+  @override
+  String get octave_f => 'F大调';
+
+  @override
+  String get octave_fsharp => '升F调';
+
+  @override
+  String get octave_g => 'G大调';
+
+  @override
+  String get octave_gsharp => '升G调';
+
+  @override
+  String get octave_a => 'A大调';
+
+  @override
+  String get octave_asharp => '升A调';
+
+  @override
+  String get octave_b => 'B大调';
+
+  @override
   String option_title(String name) {
     return '$name 选项';
   }
@@ -25,7 +61,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get option_count_title => '乐谱行数';
+  String get option_count_title => '乐谱长度';
 
   @override
   String option_count_subtitle(int count) {
@@ -44,7 +80,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get option_key_title => '乐谱调号';
+  String get option_key_title => '乐谱调性';
 
   @override
   String option_key_subtitle(String key) {

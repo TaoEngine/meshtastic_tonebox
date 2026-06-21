@@ -12,8 +12,6 @@ class ToneOptionDialogSetBpm extends StatefulWidget {
 }
 
 class _ToneOptionDialogSetBpmState extends State<ToneOptionDialogSetBpm> {
-  double newBpm = 120;
-
   @override
   Widget build(BuildContext context) {
     return Consumer<ToneProject>(
@@ -28,10 +26,7 @@ class _ToneOptionDialogSetBpmState extends State<ToneOptionDialogSetBpm> {
             crossAxisAlignment: .start,
             spacing: 16,
             children: [
-              Text(
-                "当前 BPM 值为 $bpm，将调整 BPM 值为 ${newBpm.toInt()}",
-                textAlign: .left,
-              ),
+              Text("将调整 BPM 值为 $bpm", textAlign: .left),
               Divider(height: 0),
               SizedBox(
                 height: 40,
@@ -41,23 +36,23 @@ class _ToneOptionDialogSetBpmState extends State<ToneOptionDialogSetBpm> {
                   children: [
                     IconButton.filledTonal(
                       onPressed: () => setState(() {
-                        newBpm = newBpm - 1;
+                        project.updateBpm(bpm - 1);
                       }),
                       icon: Icon(Icons.remove),
                     ),
                     Expanded(
                       child: Slider(
-                        value: newBpm,
+                        value: bpm.toDouble(),
                         min: 60,
                         max: 300,
                         onChanged: (value) => setState(() {
-                          newBpm = value;
+                          project.updateBpm(value.toInt());
                         }),
                       ),
                     ),
                     IconButton.filledTonal(
                       onPressed: () => setState(() {
-                        newBpm = newBpm + 1;
+                        project.updateBpm(bpm + 1);
                       }),
                       icon: Icon(Icons.add),
                     ),
@@ -69,7 +64,6 @@ class _ToneOptionDialogSetBpmState extends State<ToneOptionDialogSetBpm> {
           actions: [
             TextButton(
               onPressed: () {
-                project.updateBpm(newBpm.toInt());
                 context.pop();
               },
               child: Text("完成"),
@@ -82,7 +76,5 @@ class _ToneOptionDialogSetBpmState extends State<ToneOptionDialogSetBpm> {
 }
 
 /// 打开乐谱项目调整 BPM 弹窗
-void showToneOptionDialogSetBPM(BuildContext context) => showDialog(
-  context: context,
-  builder: (context) => ToneOptionDialogSetBpm(),
-);
+void showToneOptionDialogSetBPM(BuildContext context) =>
+    showDialog(context: context, builder: (context) => ToneOptionDialogSetBpm());

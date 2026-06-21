@@ -4,15 +4,15 @@ import 'package:go_router/go_router.dart';
 import 'package:meshtastic/provider/tone_project.dart';
 import 'package:provider/provider.dart';
 
-class ToneOptionDialogSetCount extends StatefulWidget {
+class ToneOptionDialogRelength extends StatefulWidget {
   /// 乐谱项目调整行数弹窗
-  const ToneOptionDialogSetCount({super.key});
+  const ToneOptionDialogRelength({super.key});
 
   @override
-  State<ToneOptionDialogSetCount> createState() => _ToneOptionDialogSetCountState();
+  State<ToneOptionDialogRelength> createState() => _ToneOptionDialogRelengthState();
 }
 
-class _ToneOptionDialogSetCountState extends State<ToneOptionDialogSetCount> {
+class _ToneOptionDialogRelengthState extends State<ToneOptionDialogRelength> {
   final _form = GlobalKey<FormState>();
 
   @override
@@ -90,4 +90,4 @@ class _ToneOptionDialogSetCountState extends State<ToneOptionDialogSetCount> {
 
 /// 打开乐谱项目调整行数弹窗
 void showToneOptionDialogSetCount(BuildContext context) =>
-    showDialog(context: context, builder: (context) => ToneOptionDialogSetCount());
+    showDialog(context: context, builder: (context) => ToneOptionDialogRelength());

@@ -1,6 +1,30 @@
 {
   "@@author": "TaoEngine",
   "@@locale": "zh",
+  "octave_c": "C大调",
+  "@octave_c": {},
+  "octave_csharp": "升C调",
+  "@octave_csharp": {},
+  "octave_d": "D大调",
+  "@octave_d": {},
+  "octave_dsharp": "升D调",
+  "@octave_dsharp": {},
+  "octave_e": "E大调",
+  "@octave_e": {},
+  "octave_f": "F大调",
+  "@octave_f": {},
+  "octave_fsharp": "升F调",
+  "@octave_fsharp": {},
+  "octave_g": "G大调",
+  "@octave_g": {},
+  "octave_gsharp": "升G调",
+  "@octave_gsharp": {},
+  "octave_a": "A大调",
+  "@octave_a": {},
+  "octave_asharp": "升A调",
+  "@octave_asharp": {},
+  "octave_b": "B大调",
+  "@octave_b": {},
   "option_title": "{name} 选项",
   "@option_title": {
     "placeholders": {
@@ -25,12 +49,12 @@
       }
     }
   },
-  "option_count_title": "乐谱行数",
+  "option_count_title": "乐谱长度",
   "@option_count_title": {},
   "option_count_subtitle": "可编辑 {count} 行",
   "@option_count_subtitle": {
     "placeholders": {
-      "count":{
+      "count": {
         "type": "int",
         "description": "乐谱可编辑的行个数",
         "example": "40"
@@ -51,14 +75,14 @@
       }
     }
   },
-  "option_key_title": "乐谱调号",
+  "option_key_title": "乐谱调性",
   "@option_key_title": {},
   "option_key_subtitle": "当前为 {key}",
   "@option_key_subtitle": {
     "placeholders": {
       "key": {
         "type": "String",
-        "description": "乐谱项目的调号",
+        "description": "乐谱项目的调性",
         "example": "C大调"
       }
     }

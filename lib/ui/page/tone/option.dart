@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:meshtastic/enum/octave.dart';
 import 'package:meshtastic/l10n/app_localizations.dart';
 import 'package:meshtastic/provider/tone_project.dart';
-import 'package:meshtastic/ui/widget/tone/option/dialog/rename.dart';
+import 'package:meshtastic/ui/widget/tone/option/dialog/re/name.dart';
 import 'package:meshtastic/ui/widget/tone/option/dialog/set/bpm.dart';
-import 'package:meshtastic/ui/widget/tone/option/dialog/set/count.dart';
+import 'package:meshtastic/ui/widget/tone/option/dialog/re/length.dart';
+import 'package:meshtastic/ui/widget/tone/option/dialog/set/key.dart';
 import 'package:meshtastic/ui/widget/tone/option/hint.dart';
 import 'package:meshtastic/ui/widget/tone/option/menu.dart';
 import 'package:provider/provider.dart';
@@ -16,9 +18,9 @@ class ToneOptionPage extends StatelessWidget {
     return Consumer<ToneProject>(
       builder: (context, project, child) {
         final name = project.name;
-        final lines = 40;
+        final length = project.length;
         final bpm = project.bpm;
-        final key = "C大调";
+        final key = project.key;
         return Scaffold(
           appBar: AppBar(title: Text(AppLocalizations.of(context)!.option_title(name))),
           body: Column(
@@ -39,7 +41,7 @@ class ToneOptionPage extends StatelessWidget {
                     onTap: () => showToneOptionDialogSetCount(context),
                     leading: Icon(Icons.grid_4x4),
                     title: Text(AppLocalizations.of(context)!.option_count_title),
-                    subtitle: Text(AppLocalizations.of(context)!.option_count_subtitle(lines)),
+                    subtitle: Text(AppLocalizations.of(context)!.option_count_subtitle(length)),
                   ),
                 ],
               ),
@@ -53,10 +55,14 @@ class ToneOptionPage extends StatelessWidget {
                     subtitle: Text(AppLocalizations.of(context)!.option_bpm_subtitle(bpm)),
                   ),
                   ListTile(
-                    onTap: () {},
+                    onTap: () => showToneOptionDialogSetKey(context),
                     leading: Icon(Icons.music_note),
                     title: Text(AppLocalizations.of(context)!.option_key_title),
-                    subtitle: Text(AppLocalizations.of(context)!.option_key_subtitle(key)),
+                    subtitle: Text(
+                      AppLocalizations.of(
+                        context,
+                      )!.option_key_subtitle(translateOctave(context, key)),
+                    ),
                   ),
                 ],
               ),

@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:meshtastic/enum/project_beats.dart';
+import 'package:meshtastic/enum/octave.dart';
 import 'package:meshtastic/enum/project_duration.dart';
 import 'package:meshtastic/enum/tone_type.dart';
 import 'package:meshtastic/model/sheet_note.dart';
@@ -17,9 +17,9 @@ class ToneProject extends ChangeNotifier {
   int get bpm => _bpm;
   int _bpm = 120;
 
-  /// 乐谱拍号
-  ProjectBeats get beats => _beats;
-  ProjectBeats _beats = .fourFour;
+  /// 乐谱调号
+  Octave get key => _key;
+  Octave _key = .c;
 
   /// 项目默认音符时长
   ProjectDuration get durationDefault => _durationDefault;
@@ -54,9 +54,9 @@ class ToneProject extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// 更新项目拍号
-  void updateBeats(ProjectBeats value) {
-    _beats = value;
+  /// 更新乐谱调号
+  void updateKey(Octave value) {
+    _key = value;
     notifyListeners();
   }
 
